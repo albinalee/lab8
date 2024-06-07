@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Homepage.css">
+    <script src="Homepage.js"></script>
+    <script src="https://kit.fontawesome.com/8ae267043c.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        .btn {
+            display: block;
+            background: #efab93;
+            padding: 15px 40px;
+            border-right: 5px solid black;
+            border-bottom: 5px solid black;
+            border-radius: 20px;
+            margin: 0 auto 50px;
+            color: white;
+            font-size: 24px;
+            transition: all .5s;
+        }
+        .btn:hover {
+            opacity: 0.7;
+        }
+        .btn:active {
+            position: relative;
+            top: 5px;
+            left: 5px;
+            border: none;
+        }
+        input {
+            width: 120px;
+            font-size:20px;
+            margin-bottom: 10px;
+        }
+        .calendar {
+            background: url(images/dog.jpg);
+            background-size: cover;
+            border-collapse: collapse;
+            border: 3px solid black;
+            margin: 0 auto 15px;
+            opacity: 0.8;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        td {
+            width: 60px;
+
+        }
+        td:nth-child(7) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="header-title">Home</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h3>1. True and false</h3>
+            <button class="btn" onclick="f1()">function 1</button>
+            <h3>2. Compare M to 50</h3>
+            <h3 style="display: inline;">M: </h3><input type="number" step="10" value="0" min="-100" max="100" id="txtbox2">
+            <button class="btn" onclick="f2()">function 2</button>
+            <h3>3. Number of loops</h3>
+            <button class="btn" onclick="f3()">function 3</button>
+            <h3>4. 45 to 67</h3>
+            <button class="btn" onclick="f4()">function 4</button>
+            <h3>5. 45 to 670</h3>
+            <button class="btn" onclick="f5()">function 5</button>
+            <h3>6. 4 and 5</h3>
+            <button class="btn" onclick="f6()">function 6</button>
+            <h3>7. Number to string</h3>
+            <h3 style="display: inline;">N: </h3><input type="number" value="0" min="0" max="9" id="txtbox7">
+            <button class="btn" onclick="f7()">function 7</button>
+            <h3>8. 10 images</h3>
+            <div id="div8"></div>
+            <button class="btn" onclick="f8()">function 8</button>
+            <h3>9. To bytes</h3>
+            <h3 style="display: inline;">Size: </h3><input type="number" value="120" min="0" max="1024" step="16" id="txtbox9">
+            <select id="units" style="height: 30px;">
+                <option value="KB">KB</option>
+                <option value="MB">MB</option>
+                <option value="GB">GB</option>
+                <option value="TB">TB</option>
+                <option value="PB">PB</option>
+            </select>
+            <h3 id="Byte"></h3>
+            <button class="btn" onclick="f9()">function 9</button>
+            <h3>10. Calendar</h3>
+            <div id="calendar"></div>
+            <button class="btn" onclick="f10()">function 10</button>
+            <h3>11. Greeting</h3>
+            <h3 id="greeting"></h3>
+            <button class="btn" onclick="hello1()">function 11</button>
+            <h3>12. Greeting</h3>
+            <h3 id="greeting2"></h3>
+            <button class="btn" onclick="hello2()" style="margin-bottom: 10px;">hello2()</button>
+            <button class="btn" onclick="hello2('Василий')">hello2('Василий')</button>
+            <h3>13. Multiplication</h3>
+            <div><h3 style="display: inline;">M: </h3><input type="number" value="3" id="txtbox13-M"></div>
+            <div><h3 style="display: inline;">N: </h3><input type="number" value="-3" id="txtbox13-N"></div>
+            <h3 id="multi"></h3>
+            <button class="btn" onclick="mul(document.getElementById('txtbox13-M').value, document.getElementById('txtbox13-N').value)">mul(m, n)</button>
+            <h3>14. Repeat string</h3>
+            <div><h3 style="display: inline;">Str: </h3><input type="text" value="str" id="txtbox14-Str"></div>
+            <div><h3 style="display: inline;">N: </h3><input type="number" min="0" value="3" id="txtbox14-N"></div>
+            <h3 id="repeat-str"></h3>
+            <button class="btn" onclick="repeat(document.getElementById('txtbox14-Str').value, document.getElementById('txtbox14-N').value)">repaet(str, n)</button>
+            <h3>15. RGB</h3>
+            <div><h3 style="display: inline;">R: </h3><input type="number" value="63" id="txtbox15-R"></div>
+            <div><h3 style="display: inline;">G: </h3><input type="number" value="127" id="txtbox15-G"></div>
+            <div><h3 style="display: inline;">B: </h3><input type="number" value="255" id="txtbox15-B"></div>
+            <h3 id="lbl-rgb"></h3>
+            <button class="btn" onclick="rgb(0, 255)" style="margin-bottom: 10px;">rgb(0, 255)</button>
+            <button class="btn" onclick="rgb(document.getElementById('txtbox15-R').value, document.getElementById('txtbox15-G').value, document.getElementById('txtbox15-B').value)">rgb(R, G, B)</button>
+            <h3>16. Average</h3>
+            <h3 style="display: inline;">Array: </h3><input type="text" value="1,2,3,4,5,6" id="txtbox16-array" style="width: 400px;">
+            <h3 id="result-16"></h3>
+            <button class="btn" onclick="avg(document.getElementById('txtbox16-array').value)">avg(str)</button>
+            <h3>17. Multiplication</h3>
+            <div><h3 style="display: inline;">A: </h3><input type="number" value="3" id="txtbox17-A"></div>
+            <div><h3 style="display: inline;">B: </h3><input type="number" value="-3" id="txtbox17-B"></div>
+            <h3 id="result-17"></h3>
+            <button class="btn" onclick="m(document.getElementById('txtbox17-A').value, document.getElementById('txtbox17-B').value)">m(a, b)</button>
+            <h3>18. Function literal</h3>
+            <h3 id="result-18"></h3>
+            <button class="btn" onclick="f18()">operation(m,n,o)</button>
+            <h3>19. Return function</h3>
+            <h3 id="result-19"></h3>
+            <button class="btn" onclick="f19()">addN(n)</button>
+            <h3>20. Goods</h3>
+            <h3 style="display: inline;">N: </h3><input type="number" value="3" id="txtbox20-N">
+            <h3 id="result-20"></h3>
+            <button class="btn" onclick="word(document.getElementById('txtbox20-N').value)">word(n)</button>
+        </div>
+    </main>
+</body>
+</html>

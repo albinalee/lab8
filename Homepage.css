@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+body {
+    padding: 120px 0;
+}
+
+.container {
+    padding: 50px 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.9;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to right, #efab93, #f2a0a1);
+    box-shadow: 0 6px #410808;
+}
+
+header .container {
+    display: flex;
+    width: 90%;
+    padding: 0;
+}
+
+.header-title {
+    display: block;
+    width: 240px;
+    color: white;
+    font-size: 48px;
+    line-height: 90px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.header-title:hover {
+    background: #410808;
+    transition: all 1s;
+}
+
+.task {
+    display: flex;
+    background: linear-gradient(to right, #1c305c, #19448e);
+    width: 1320px;
+    height: 90px;
+    padding: 0 30px;
+    border-left: 20px solid #08132b;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 5px 5px #17184b;
+}
+
+.task::before {
+    position: relative;
+    top: 14px;
+    left: 1317px;
+    float: left;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-left: 6px solid #08132b;
+    border-bottom: 6px solid #08132b;
+    border-radius: 5px;
+    content: '';
+    transform: rotate(42deg);
+}
+
+.task-title {
+    color: white;
+    font-size: 54px;
+    line-height: 90px;
+    letter-spacing: 2px;
+}
